@@ -19,7 +19,7 @@
     <div class="header__background">
       <div class="header__text container">
         <h1 class="header__title">Todo</h1>
-        <img class="header__icon" src="images/icon-sun.svg" alt="activate light mode">
+        <div class="header__icon">
       </div>
     </div>
   </header>
@@ -34,9 +34,7 @@
          <label for="checkbox">
             <input type="checkbox" class="form__checkbox" id = "checkbox">
 
-            <span class="form__checkbox--span">
-              
-            </span>
+            <span class="form__checkbox--span"></span>
 
 
             <input type="text" name="task" class="form__input"placeholder="Create a new todo...">
@@ -44,6 +42,46 @@
 
         </div>
       </form>
+
+
+      <ul class="tasks">
+        <li class="task">
+          
+          <div>
+            <label class="task__label" for="task__checkbox--1" id="checkbox">
+
+              <input type="checkbox" class="task__checkbox" id="task__checkbox--1">
+              <span class="task__checkbox--span"></span>
+              <span class="task__text">Complete Online JavaScript Course</span>
+            </label>
+          </div>
+
+          <div class="task__icons">
+            <button class="task__edit" type="button">  
+    
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#393a4c"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+              <path d="M13.5 6.5l4 4" />
+            </svg>
+
+            </button>
+
+            <button class="task__x" type="button"><img src="images/icon-cross.svg" alt="Icon Delete"></button>
+          </div>
+          
+        </li>
+      </ul>
+
     </div>
   </main>
 
@@ -57,5 +95,7 @@
 
   Drag and drop to reorder list -->
 
+
+  <script src="js/funciones.js"></script>
 </body>
 </html>

@@ -45,6 +45,9 @@ body{
     font-family: var(--fontFamily);
 }
 
+body, .header .container, .form, .form__input{
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
 
 /* Globales */
@@ -70,7 +73,20 @@ img{
     width: 100%;
     height: 20rem;
 }
+body.light .header__background{
+    background-image: url(../images/bg-desktop-light.jpg);
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.3s ease;
 
+}
+
+@keyframes deslizar {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
 .header__text{
     height: 70%;
     display: flex;
@@ -87,10 +103,17 @@ img{
 
 }
 .header__icon{
-    width: 2rem;
-    height: 2rem;
+    background-image: url(../images/icon-sun.svg);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 3rem;
+    height: 3rem;
 }
-
+ 
+body.light .header__icon{
+    background-image: url(../images/icon-moon.svg);
+} 
 @media(min-width: 768px) {
     .header__background{
         background-image: url(../images/bg-desktop-dark.jpg);
@@ -110,11 +133,22 @@ img{
     padding: 1rem 2rem;
     border-radius: .5rem;
 }
+
+body.light .form{
+    background-color: var(--gray50);
+}
 .form__group label{
     display: flex;
     gap: 1rem;
 }
-.form__checkbox{
+
+.task__label{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+.form__checkbox, .task__checkbox{
     position: absolute;
     opacity: 0;
 }
@@ -123,10 +157,23 @@ img{
     height: 2rem;
     border-radius: 50%;
     border: .1rem solid var(--gray600);
+}
 
+.task__checkbox--span{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: .1rem solid var(--gray600);
 }
 
 .form__checkbox:checked + .form__checkbox--span{
+    background-image: url(../images/icon-check.svg),
+                         linear-gradient(to bottom right, hsl(192, 100%, 67%) 0%,  hsl(280, 87%, 65%) 120%);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.task__checkbox:checked + .task__checkbox--span{
     background-image: url(../images/icon-check.svg),
                          linear-gradient(to bottom right, hsl(192, 100%, 67%) 0%,  hsl(280, 87%, 65%) 120%);
     background-repeat: no-repeat;
@@ -140,6 +187,9 @@ img{
     border: none;
     color: var(--gray600);
     font-size: 1.5rem;
+}
+body.light .form__input{
+    background-color: var(--gray50);
 }
 .form__input:focus{
     border: none;
@@ -162,4 +212,46 @@ img{
         padding: 1.5rem 2rem;
         margin-top: -20rem;
     }
+}
+
+
+/* Tasks */
+
+.tasks{
+    background-color: var(--navy900);
+    border-radius: .5rem;
+    padding: 1.5rem 2rem;
+    
+}
+.task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.task__text{
+    font-size: 1.2rem;
+    color: var(--purple300);
+}
+.task__icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.task__edit, .task__x{
+    all: unset;
+}
+.task__edit{
+    
+}
+.task__edit:hover{
+    cursor: pointer;
+}
+.task__x{
+   
+}
+.task__x{
+    cursor: pointer;
 }
