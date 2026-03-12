@@ -44,8 +44,12 @@ body{
     font-size: var(--fontSize);
     font-family: var(--fontFamily);
 }
-
-body, .header .container, .form, .form__input{
+@media(min-width:768px){
+    main{
+        margin-top: 9rem;
+    }
+}
+body, .header .container, .form, .form__input, .tasks{
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -62,9 +66,7 @@ img{
 }
 
 
-.header{
 
-}
 .header__background{
     background-image: url(../images/bg-mobile-dark.jpg);
     background-repeat: no-repeat;
@@ -73,10 +75,10 @@ img{
     width: 100%;
     height: 20rem;
 }
+@media(min-width: 768px){}
 body.light .header__background{
     background-image: url(../images/bg-desktop-light.jpg);
     transition: background-color 0.5s ease, color 0.5s ease, border-color 0.3s ease;
-
 }
 
 @keyframes deslizar {
@@ -117,7 +119,7 @@ body.light .header__icon{
 @media(min-width: 768px) {
     .header__background{
         background-image: url(../images/bg-desktop-dark.jpg);
-        height: 40rem;
+        height: 30rem;
     }
     .header__title{
         letter-spacing: 2rem;
@@ -130,15 +132,18 @@ body.light .header__icon{
 .form{
     margin-top: -8rem;
     background-color: var(--navy900);
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     border-radius: .5rem;
 }
+
 
 body.light .form{
     background-color: var(--gray50);
 }
 .form__group label{
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -153,6 +158,7 @@ body.light .form{
     opacity: 0;
 }
 .form__checkbox--span{
+    display: block;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -207,12 +213,7 @@ body.light .form__input{
     font-size: 1.3rem;
 }
 
-@media (min-width: 768px){
-    .form{
-        padding: 1.5rem 2rem;
-        margin-top: -20rem;
-    }
-}
+
 
 
 /* Tasks */
@@ -220,9 +221,12 @@ body.light .form__input{
 .tasks{
     background-color: var(--navy900);
     border-radius: .5rem;
-    padding: 1.5rem 2rem;
-    
+    padding: 1rem 2rem;
 }
+body.light .tasks{
+    background-color: var(--gray50);
+}
+
 .task{
     display: flex;
     align-items: center;
@@ -230,9 +234,13 @@ body.light .form__input{
     
 }
 
+
 .task__text{
     font-size: 1.2rem;
     color: var(--purple300);
+}
+body.light .task__text{
+    color: var(--nav);
 }
 .task__icons{
     display: flex;
@@ -243,15 +251,11 @@ body.light .form__input{
 .task__edit, .task__x{
     all: unset;
 }
-.task__edit{
-    
-}
+
 .task__edit:hover{
     cursor: pointer;
 }
-.task__x{
-   
-}
+
 .task__x{
     cursor: pointer;
 }
