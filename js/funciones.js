@@ -1,6 +1,13 @@
-const icon = document.querySelector('.header__icon');
-const body = document.body;
+export function validarCliente(){
+    
 
-icon.addEventListener('click', () =>{
-    body.classList.toggle('light')
-})
+    const form = document.querySelector('.form');
+
+
+    form.addEventListener('submit', e=>{
+        e.preventDefault();
+        console.log('hi');
+    })
+}
+
+validarCliente();

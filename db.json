@@ -1,3 +1,19 @@
 {
-    "tasks": []
+    "tasks": [
+
+        {
+            "id": "1", 
+            "content": "Complete Online JavaScript Course",
+            "status": true
+        },
+
+        {
+            "id": "2",
+            "content": "Finished the todo-app",
+            "status": false
+        }
+
+
+
+    ]
 }
