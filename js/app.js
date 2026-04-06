@@ -1,5 +1,6 @@
-import { getTasks } from "./API.js";
-import {validarCliente} from "./funciones.js";
+import { getTasks, deleteTask } from "./API.js";
+import {formValidation} from "./createtask.js";
+
 
 /*    validarCliente(); */
 (function(){
@@ -66,10 +67,19 @@ import {validarCliente} from "./funciones.js";
             const taskX = document.createElement('BUTTON');
             taskX.classList.add('task__x');
             taskX.type = 'button';
+            taskX.dataset.id = `${id}`;
+            taskX.addEventListener('click', (e)=>{
+                deleteTask(taskX.dataset.id)
+            })
+           
+   
+      
 
+            
             const taskXImg = document.createElement('IMG');
             taskXImg.src = 'images/icon-cross.svg';
             taskX.alt = 'Icon Delete';
+
 
             //Agregamos al html y creamos relaciones padre-hijos
             ulTasks.appendChild(taskLi)

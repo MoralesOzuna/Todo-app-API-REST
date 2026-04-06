@@ -14,4 +14,42 @@ export const getTasks = async () =>{ //exports es para usarse en otros archivos.
 }
 
 
-//Cuando se crea un nuevo cliente
+export const newTask = async task =>{ //tasks es un parametro que recibimos newTask(task);
+    try{
+        await fetch(url, {
+            method: 'POST', //tipo de metodo
+            body: JSON.stringify(task), //task es un objeto pero el server no los acepta, oor ende se convierte a texto JSON
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        getTasks();
+    }catch(error){
+        console.log(error);
+    }
+}
+
+export const deleteTask = async id =>{
+    try{
+        await fetch(`${url}/${id}`,{
+            method: 'DELETE'
+        })
+    } catch(error){
+        console.log(error);
+    }
+} 
+
+
+export const editarCliente = async task =>{
+    try{
+        await fetch(`${url}/${task.id}`,{
+            method: 'PUT',
+            body: JSON.stringify(task), //convierte el objeto en texto que HTTP puede enviar
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        });
+    } catch(error){
+        console.log(error)
+    }
+}

@@ -1,13 +1,15 @@
-export function validarCliente(){
-    
+export function appMessage(element, message){
+    const textMessage = document.createElement('P');
+    textMessage.textContent = message;
+    textMessage.classList.add('message');
+    textMessage.classList.add('container');
 
-    const form = document.querySelector('.form');
 
+    element.appendChild(textMessage);
 
-    form.addEventListener('submit', e=>{
-        e.preventDefault();
-        console.log('hi');
-    })
+    setTimeout(()=>{
+        textMessage.remove();
+    },3000)
 }
 
-validarCliente();
+

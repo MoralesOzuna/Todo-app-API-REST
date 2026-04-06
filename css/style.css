@@ -64,7 +64,23 @@ img{
     max-width: 100%;
     display: block;
 }
+.message{
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
+    background-color: var(--purple300);
+    color: var(--navy950);
+    width: 80%;
+    padding: 1rem 2rem;
+    border-radius: .8rem;
+    transition: opacity 0.3s ease;
+}
+body.light .message{
+    background-color: var(--navy900);
+    color: white;
+}
 
 
 .header__background{
