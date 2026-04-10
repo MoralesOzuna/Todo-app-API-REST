@@ -39,12 +39,12 @@ export const deleteTask = async id =>{
     }
 } 
 
-
-export const editarCliente = async task =>{
+//data puede ser content o status
+export const editTask = async (id, data) =>{
     try{
-        await fetch(`${url}/${task.id}`,{
-            method: 'PUT',
-            body: JSON.stringify(task), //convierte el objeto en texto que HTTP puede enviar
+        await fetch(`${url}/${id}`,{
+            method: 'PATCH',
+            body: JSON.stringify(data), //convierte el objeto en texto que HTTP puede enviar
             headers:{
                 'Content-Type': 'application/json'
             }
@@ -53,3 +53,4 @@ export const editarCliente = async task =>{
         console.log(error)
     }
 }
+

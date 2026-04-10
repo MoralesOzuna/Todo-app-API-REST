@@ -77,6 +77,12 @@ img{
     border-radius: .8rem;
     transition: opacity 0.3s ease;
 }
+.editingInput{
+    padding: .5rem;
+    background-color: var(--navy850);
+    color: white;
+    width: 30rem;
+}
 body.light .message{
     background-color: var(--navy900);
     color: white;
